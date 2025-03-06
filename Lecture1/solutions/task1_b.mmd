@@ -1,0 +1,25 @@
+erDiagram
+CUSTOMER{
+INTEGER id Pk
+TEXT name 
+TEXT email
+}
+ORDER{
+INTEGER id Pk
+NUMERIC orderDate
+INTEGER customerid Fk
+}
+PRODUCT{
+INTEGER id Pk
+TEXT name
+REAL price
+}
+ORDER_LINE{
+INTEGER id Pk
+INTEGER orderid Fk
+INTEGER productid Fk
+INTEGER quantity
+}
+CUSTOMER||--o{ ORDER : places
+ORDER||--|{ ORDER_LINE : contains
+PRODUCT||--|{ ORDER_LINE : includes

@@ -407,10 +407,7 @@ TEXT department
 REAL salary
 }
 ```
-* Use the `ALTER TABLE` command to add a new column named `email` (TEXT) to the "Employees" table.
-- Add a `UNIQUE` constraint to the `email` column to ensure that each employee has a unique email address.
- - Add a `NOT NULL` constraint to the `employee_name` column.
-- Add a `CHECK` constraint to the `salary` column to ensure that salaries are always greater than or equal to 0.
+- Use the `ALTER TABLE` command to add a new column named `email` (TEXT) with `UNIQUE` constraint (to ensure that each employee has a unique email address) to the "Employees" table.
 - Use the `ALTER TABLE` command to rename the `department` column to `dept_name`.
 - Create a test table called "TestTable", and then use the `DROP TABLE` command to remove it from your database.
             

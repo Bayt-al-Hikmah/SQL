@@ -424,6 +424,30 @@ COMMIT;
     - Committing an inner transaction does not save changes permanently; it only marks the inner transaction as complete.
     - Only the outermost transaction’s `COMMIT` statement saves changes permanently to the database.
     - If the outer transaction is rolled back, all changes made within the inner transactions are also undone, even if the inner transactions were committed.
+### SQLite Nested Transactions:
+n SQLite, **nested transactions** are not natively supported in the same way as in some other databases (e.g., MySQL or PostgreSQL). However, you can simulate nested transactions using **savepoints**. Savepoints allow you to create checkpoints within a transaction, which you can roll back to without affecting the entire transaction.
+```
+BEGIN TRANSACTION;
+
+-- Create a savepoint for the "inner transaction"
+SAVEPOINT inner_transaction;
+
+-- Perform the update operation
+UPDATE accounts SET balance = balance - 50 WHERE account_id = 1;
+
+-- Check if the update was successful
+-- If no rows were updated, rollback to the savepoint
+CASE
+    WHEN changes() = 0 THEN
+        ROLLBACK TO inner_transaction;
+    ELSE
+        RELEASE inner_transaction; -- Release the savepoint if successful
+END;
+
+-- Commit the outer transaction
+COMMIT;
+
+```
 ## Tasks:
 ### Task 1:
 You are working with a **Sales Database** that includes the following tables:

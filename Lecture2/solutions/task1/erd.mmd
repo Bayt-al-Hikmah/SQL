@@ -1,0 +1,31 @@
+erDiagram
+
+Books{
+INTEGER book_id Pk
+TEXT ISBN 
+TEXT title
+NUMERIC publication_year
+TEXT genre
+INTEGER authro_id Fk
+}
+Authors{
+INTEGER author_id Pk
+TEXT name
+NUMERIC birthdate
+}
+Members{
+INTEGER member_id Pk
+TEXT name
+TEXT address
+NUMERIC contact_number
+}
+Loan_records{
+INTEGER loan_id Pk
+INTEGER book_id Fk
+INTEGER member_id Fk
+NUMERIC borrow_date
+NUMERIC return_date
+}
+Authors ||--|{ Books : writes
+Members ||--|{ Loan_records: borrows
+Books ||--|{ Loan_records : borrowed
