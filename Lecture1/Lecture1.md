@@ -15,6 +15,7 @@ There are two main types of databases:
 #### Relational Database :
 Relational or SQL databases store data in **structured tables** consisting of rows and columns. They use **SQL (Structured Query Language)** to manage and query data. Relationships between tables are established using **keys**.
 Each table can have a **primary key**, which uniquely identifies each record in the table. This primary key can be referenced from another table using a **foreign key**, creating a relationship between the two tables.
+  
 ![Table Example](./attachments/table.png)
 #### SQL :
 SQL stands for Structured Query Language. It is a language used to interact with databases, via which you can create, read, update, and delete data in a database
@@ -92,7 +93,7 @@ Cardinality is represented in ER diagrams using **crow's foot notation** at th
 A **one-to-one relationship** is used when an entity is split into two parts to make the information more concise and easier to understand.  
 **For example:**
 A `Person` entity might be split into `Person` and `Passport`, where each person has exactly one passport, and each passport belongs to only one person.  
-![one to one](./attachments/one_to_one.png)
+![one to one](./attachments/one_to_one.PNG)
 ##### 2. One-to-Many Cardinality :
 A **one-to-many relationship** describes a relationship between two entities, `X` and `Y`, where:
 - One instance of `X` can be linked to **many** instances of `Y`.
@@ -108,7 +109,7 @@ A **many-to-many relationship** describes a relationship between two entities,
 A `Student` can enroll in **many** `Courses`, and a `Course` can have **many** `Students`.
 **Note:** In a physical ERD, a many-to-many relationship is resolved by introducing a **junction table** (or associative entity), which splits the relationship into **two one-to-many relationships**.  
 
-![many-to-many](./attachments/ERD.png)  
+![many-to-many](./attachments/ERD.PNG)  
 ### Mermaid :
 Mermaid is one of many tools that can be used to create Entity Relationship Diagrams (ERDs). It features an easy and simple syntax, making it accessible for both beginners and experienced users. Mermaid can be used online through its [web-based editor](https://mermaid.live/edit) or integrated as an extension in Visual Studio Code, providing flexibility for developers and designers. 
 #### Example:
@@ -138,7 +139,7 @@ Student ||--|{ Enroll : Enroll    
 
 Course ||--|{ Enroll : Enrolled
 ```
-![ERD](./attachments/ERD.png)
+![ERD](./attachments/ERD.PNG)
 #### Explain :
 The first line, `erDiagram`, tells the editor that we are creating an Entity-Relationship Diagram (ERD). After this line, we define our entities. Each entity starts with its name, followed by `{}`. Inside the curly braces, we list the attributes, with each attribute on a new line. The syntax for an attribute is as follows:
 1. Start with the **data type** of the value.
@@ -150,6 +151,6 @@ Once the entities are defined, we establish relationships between them. This is 
 ## Task:
 Write Mermaid script to create the following Entity Relationship Diagrams (ERD)  
 ### Diagram 1:
-![erd1](./attachments/task1_erd1.png)  
+![erd1](./attachments/task1_erd1.PNG)  
 ### Diagram 2:
-![erd1](./attachments/task1_erd2.png)  
+![erd1](./attachments/task1_erd2.PNG)  
