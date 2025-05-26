@@ -143,6 +143,7 @@ student table:
 | 1          | Alice   |
 | 2          | Bob     |
 | 3          | Charlie |
+
 mark table:
 
 | student_id | mark |
@@ -150,6 +151,7 @@ mark table:
 | 1          | 85   |
 | 2          | 70   |
 | 4          | 90   |
+
 After **INNER JOIN** we will get the following table:
 
 | student_id | name  | mark |
@@ -172,6 +174,7 @@ student table:
 | 1          | Alice   |
 | 2          | Bob     |
 | 3          | Charlie |
+
 mark table:
 
 | student_id | mark |
@@ -179,6 +182,7 @@ mark table:
 | 1          | 85   |
 | 2          | 70   |
 | 4          | 90   |
+
 After **LEFT JOIN** we will get the following table:
 
 | student_id | name    | mark |
@@ -202,6 +206,7 @@ student table:
 | 1          | Alice   |
 | 2          | Bob     |
 | 3          | Charlie |
+
 mark table:
 
 | student_id | mark |
@@ -209,7 +214,9 @@ mark table:
 | 1          | 85   |
 | 2          | 70   |
 | 4          | 90   |
+
 After **RIGHT JOIN** we will get the following table:
+
 
 | student_id | name  | mark |
 | ---------- | ----- | ---- |
@@ -232,6 +239,7 @@ student table:
 | 1          | Alice   |
 | 2          | Bob     |
 | 3          | Charlie |
+
 mark table:
 
 | student_id | mark |
@@ -239,6 +247,7 @@ mark table:
 | 1          | 85   |
 | 2          | 70   |
 | 4          | 90   |
+
 After **FULL JOIN** we will get the following table:
 
 | student_id | name    | mark |
@@ -263,6 +272,7 @@ student table:
 | 1          | Alice   |
 | 2          | Bob     |
 | 3          | Charlie |
+
 mark table:
 
 | student_id | mark |
@@ -270,6 +280,7 @@ mark table:
 | 1          | 85   |
 | 2          | 70   |
 | 4          | 90   |
+
 After **FULL JOIN** we will get the following table:
 
 | student_id | name    | mark |
@@ -283,6 +294,7 @@ After **FULL JOIN** we will get the following table:
 | 3          | Alice   | 85   |
 | 3          | Bob     | 70   |
 | 3          | Charlie | 90   |
+
 the Sql command:
 ```
 SELECT students.student_id, students.name, marks.mark
@@ -487,4 +499,3 @@ You manage a **Library Database** with these tables:
     3. Check for errors; rollback if the book was never loaned.        
     4. Commit the transaction if successful.        
 - Use nested transactions to handle bulk book returns and ensure atomicity.
-- 
