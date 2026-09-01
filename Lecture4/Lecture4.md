@@ -132,6 +132,7 @@ SQL gives us the power to **join tables** together and combine their data into
 3. **RIGHT JOIN** (or RIGHT OUTER JOIN)
 4. **FULL JOIN** (or FULL OUTER JOIN)
 5. **CROSS JOIN**
+
 To join tables in SQL, we write a `SELECT` statement, specify the first table, and then use the **join command** (e.g., `INNER JOIN`, `LEFT JOIN`, etc.) followed by the second table name. After that, we use the `ON` keyword to specify the column(s) used to match rows between the tables. SQL will then combine rows from the first table (`Table A`) with rows from the second table (`Table B`) where the values in the specified columns match.
 #### INNER JOIN:
 An **INNER JOIN** in SQL is used to combine rows from two or more tables based on a related column between them. It returns only the rows where there is a **match** in both tables. If a row in one table does not have a corresponding match in the other table, it will **not** be included in the result.  
@@ -158,6 +159,8 @@ After **INNER JOIN** we will get the following table:
 | ---------- | ----- | ---- |
 | 1          | Alice | 85   |
 | 2          | Bob   | 70   |
+
+
 the Sql command:
 ```
 SELECT students.student_id, students.name, marks.mark
@@ -190,6 +193,8 @@ After **LEFT JOIN** we will get the following table:
 | 1          | Alice   | 85   |
 | 2          | Bob     | 70   |
 | 3          | Charlie | Null |
+
+
 the Sql command:
 ```
 SELECT students.student_id, students.name, marks.mark
@@ -223,6 +228,8 @@ After **RIGHT JOIN** we will get the following table:
 | 1          | Alice | 85   |
 | 2          | Bob   | 70   |
 | NULL       | NULL  | 90   |
+
+
 the Sql command:
 ```
 SELECT students.student_id, students.name, marks.mark
@@ -256,6 +263,8 @@ After **FULL JOIN** we will get the following table:
 | 2          | Bob     | 70   |
 | 3          | Charlie | NULL |
 | NULL       | NULL    | 90   |
+
+
 the Sql command:
 ```
 SELECT students.student_id, students.name, marks.mark
@@ -378,7 +387,8 @@ In this scenario, the user can only withdraw 50, and the second withdrawal is pr
 To create a transaction in SQL, we follow a structured process to ensure that a sequence of operations is executed as a single, atomic unit. Here’s how it works:
 1. **Begin the Transaction**: We start by declaring the beginning of the transaction using the `BEGIN TRANSACTION` statement. This marks the start of our logical unit of work.
 2. **Execute Operations**: After starting the transaction, we include the operations (e.g., `INSERT`, `UPDATE`, `DELETE`, or `SELECT`) that we want to execute as part of the transaction. These operations are treated as a single block.
-3. **End the Transaction**: Once all the operations are successfully executed, we conclude the transaction with the `COMMIT` statement. This saves all the changes made during the transaction to the database, making them permanent.  
+3. **End the Transaction**: Once all the operations are successfully executed, we conclude the transaction with the `COMMIT` statement. This saves all the changes made during the transaction to the database, making them permanent.
+
 If any error occurs during the execution of the operations, we can use the `ROLLBACK` statement to undo all the changes made since the transaction began, ensuring that the database remains in a consistent state.
 ```
 -- Step 1: Begin the transaction
@@ -465,15 +475,19 @@ COMMIT;
 You are working with a **Sales Database** that includes the following tables:
 1. **Products**: Columns: `product_id`, `product_name`, `category`, `price`.
 2. **Orders**: Columns: `order_id`, `product_id`, `quantity`, `order_date`.
+
+
 **Using Aggregate Functions:**
 - Write queries to:
     - Calculate the total revenue generated from each product category.
     - Determine the average price of products within the "Electronics" category.
     - Identify the product with the highest total sales quantity.
+
 **Using Subqueries:**
 - Write queries to:
     - Retrieve all products that have not been included in any orders.
     - Find the product categories where the average price is higher than the overall average price of all products.
+
 **Using Grouping:**
 - Write queries to:
     - Group orders by month and calculate the total sales for each month.
@@ -486,12 +500,15 @@ You manage a **Library Database** with these tables:
     - Columns: `member_id`, `name`, `email`.
 3. **Loans**:
     - Columns: `loan_id`, `book_id`, `member_id`, `loan_date`, `return_date`.
- **Using Joins**:
+
+**Using Joins**:
 - Perform an `INNER JOIN` to list all books currently on loan with member details.    
 - Use a `LEFT JOIN` to show all members and their loaned books (include members with no loans).
+
 **Using Set Operations**:
 - Use `UNION` to combine a list of all book titles and member names.    
 - Find books in the "Fiction" genre that have never been loaned using `EXCEPT`.
+
 **Using Transactions**:
 - Simulate a book return process:  
     1. Begin a transaction.
