@@ -366,6 +366,7 @@ INTEGER quantity_in_stock
 - The **price** must be **greater than 0**.
 - The **quantity in stock** should have a **default value of 0**.
 - The **product ID** should be set to **auto-increment**.
+
 **Insert the following products into the table:**
 
 | product_name                 | category       | price | quantity_in_stock |
@@ -385,6 +386,7 @@ Use **SELECT** to retrieve the following data:
 - All product information for products in the **"Electronics"** category.
 - The names of all products with a price **greater than $50**.
 - The **names and prices** of the **top 3 most expensive products**.
+
 ### Task 2:
 Using the **previous database**, create an **SQL file** that performs the following operations:
 - **Delete** all rows where the **price is less than 10**.
