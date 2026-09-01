@@ -100,7 +100,7 @@ A **one-to-many relationship** describes a relationship between two entities,�
 - However, each instance of `Y` is linked to **only** one instance of `X`.
 **For example:**
 A ``Department`` can have **many** `Employees`, but each `Employee` belongs to only **one** `Department`.  
-![many-to-one](./attachments/one_to_many.png)  
+![many-to-one](./attachments/one_to_many.PNG)  
 ##### 3. Many-to-Many Cardinality :
 A **many-to-many relationship** describes a relationship between two entities, `X` and `Y`, where:
 - One instance of `X` can be linked to **many instances of `Y`**.
